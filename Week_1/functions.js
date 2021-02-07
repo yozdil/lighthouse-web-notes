@@ -7,20 +7,10 @@ let animals = [
   { name: "Jimmy", species: "fish" },
 ];
 
-//  Using filter to push values into an array.
-let dogs = [];
-
-animals.filter((animal) => {
-  if (animal.species === "dog") {
-    dogs.push(animal);
-  }
+let names = animals.map((animal) => {
+  return animal.name + " is a " + animal.species;
 });
 
-console.log(dogs);
+let names = animals.map((animal) => animal.name + " is a " + animal.species);
 
-// Creating a function variable and passing into the filter
-
-let isDog = animal => animal.species === 'dog';
-
-console.log(animals.filter(isDog));
-console.log(animals.reject(isDog))
+console.log(names);
