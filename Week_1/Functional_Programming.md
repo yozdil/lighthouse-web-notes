@@ -1,6 +1,6 @@
-### Functional Programming
+# Functional Programming
 
-## Filter
+## Array.prototype.filter()
 Consider the following array containing objects.
 
 ```javascript
