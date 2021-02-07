@@ -73,3 +73,29 @@ RESULT
 'Ursula is a cat',
 'Jimmy is a fish'
 ]
+
+## Array.prototype.reduce()
+
+```javascript
+const array = [1, 2, 3, 4, 5];
+
+let reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+console.log( array.reduce(reducer) ); // 15
+```
+Or we can use Map's initial value property.
+
+```javascript
+let orders = [
+  { amount: 250 },
+  { amount: 400 },
+  { amount: 100 },
+  { amount: 325 },
+  { amount: 500 },
+];
+
+let totalAmount = orders.reduce((sum, order) => sum + order.amount, 0);
+
+console.log(totalAmount); // 1575
+```
+See how after we use 0 as initial value after our function inside map.
