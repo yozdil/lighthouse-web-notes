@@ -1,16 +1,17 @@
-let animals = [
-  { name: "Fluffykins", species: "rabbit" },
-  { name: "Caro", species: "dog" },
-  { name: "Hamilton", species: "dog" },
-  { name: "Harold", species: "fish" },
-  { name: "Ursula", species: "cat" },
-  { name: "Jimmy", species: "fish" },
+const array = [1, 2, 3, 4, 5];
+
+let reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+console.log(array.reduce(reducer));
+
+let orders = [
+  { amount: 250 },
+  { amount: 400 },
+  { amount: 100 },
+  { amount: 325 },
+  { amount: 500 },
 ];
 
-let names = animals.map((animal) => {
-  return animal.name + " is a " + animal.species;
-});
+let totalAmount = orders.reduce((sum, order) => sum + order.amount, 0);
 
-let names = animals.map((animal) => animal.name + " is a " + animal.species);
-
-console.log(names);
+console.log(totalAmount);
