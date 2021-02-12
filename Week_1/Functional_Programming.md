@@ -2,6 +2,15 @@
 
 ## Array.prototype.filter()
 
+filter() does not mutate the array on which it is called.
+
+### Syntax
+```javascript
+let newArray = arr.filter(callback(currentValue[, index[, array]]) {
+  // return element for newArray, if true
+}[, thisArg]);
+```
+
 Consider the following array containing objects.
 
 ```javascript
@@ -50,6 +59,15 @@ RESULT
 
 ## Array.prototype.map()
 
+map does not mutate the array on which it is called (although callback, if invoked, may do so).
+
+### Syntax
+```javascript
+let newArray = arr.map(callback(currentValue[, index[, array]]) {
+  // return element for newArray, after executing something
+}[, thisArg]);
+```
+
 Considering the same animals array, look what map does.
 
 ```javascript
@@ -75,6 +93,12 @@ RESULT
 ]
 
 ## Array.prototype.reduce()
+reduce does not mutate the original array.
+
+### Syntax
+```javascript
+arr.reduce(callback( accumulator, currentValue, [, index[, array]] )[, initialValue])
+```
 
 ```javascript
 const array = [1, 2, 3, 4, 5];
@@ -99,3 +123,12 @@ let totalAmount = orders.reduce((sum, order) => sum + order.amount, 0);
 console.log(totalAmount); // 1575
 ```
 See how after we use 0 as initial value after our function inside map.
+
+### Flatten an array of arrays
+```javascript
+let flattened = [[0, 1], [2, 3], [4, 5]].reduce(
+  ( accumulator, currentValue ) => accumulator.concat(currentValue),
+  []
+)
+// flattened is [0, 1, 2, 3, 4, 5]
+```
